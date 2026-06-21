@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Syncopate:wght@400;700&family=Cinzel:wght@400;700&family=Montserrat+Subrayada:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Georgia", Georgia, ui-serif, Cambria, "Times New Roman", Times, serif;
+  --font-serif: "Georgia", Georgia, ui-serif, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --color-brand-dark: #FAF9F6;
+  --color-brand-navy: #0B1F44;
+  --color-brand-slate: #1C386E;
+  --color-brand-accent: #BA9E6B;
+  --color-brand-electric: #4A5568;
+  --color-brand-neon: #718096;
+  --color-brand-violet: #1C386E;
+  --color-brand-cyan: #BA9E6B;
+  --color-brand-silver: #596780;
+  --color-brand-gold: #BA9E6B;
+  
+  --animate-orbit-cw: orbit-cw 25s linear infinite;
+  --animate-orbit-ccw: orbit-ccw 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes orbit-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit-ccw {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(186, 158, 107, 0.4)) drop-shadow(0 0 15px rgba(11, 31, 68, 0.15)); }
+  50% { filter: drop-shadow(0 0 15px rgba(186, 158, 107, 0.7)) drop-shadow(0 0 35px rgba(11, 31, 68, 0.3)); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #BA9E6B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B1F44;
+}
+
+/* Glassmorphism helpers for Light Theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 31, 68, 0.1);
+  box-shadow: 0 10px 40px 0 rgba(11, 31, 68, 0.05);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(186, 158, 107, 0.5);
+  box-shadow: 0 12px 30px rgba(186, 158, 107, 0.15);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 8px rgba(186, 158, 107, 0.4), 0 0 20px rgba(11, 31, 68, 0.1);
+}
+
+.glow-text-violet {
+  text-shadow: 0 0 8px rgba(11, 31, 68, 0.4), 0 0 20px rgba(186, 158, 107, 0.1);
+}
+
+/* Grid overlay background matching clean academic grid drawing style */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(11, 31, 68, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 31, 68, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Hide navigation scrolls */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Premium gradient elements */
+.text-gradient {
+  background: linear-gradient(135deg, #0B1F44 30%, #1c386e 60%, #BA9E6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #0B1F44 0%, #BA9E6B 50%, #1c386e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scanline effect for background */
+.scanline::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 240, 255, 0.03) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.01));
+  z-index: 2;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
