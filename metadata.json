@@ -1,0 +1,6 @@
+{
+  "name": "VELTRIX RESEARCHORA",
+  "description": "Where Research Meets Innovation. Premium futuristic corporate research portal providing advanced solutions in PhD guidance, journal publication, and hardware development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
